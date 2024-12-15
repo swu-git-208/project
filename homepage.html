@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #deb0f8;
+      color: #0a2a9d;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+    }
+
+    .card {
+      background-color: #f6a3ca;
+      padding: 40px;
+      border-radius: 10px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.7);
+      max-width: 400px;
+      width: 100%;
+      text-align: center;
+    }
+
+    .card h1 {
+      color: #fe1499;
+    }
+
+    .card input {
+      width: 100%;
+      padding: 10px;
+      margin: 10px 0;
+      border: none;
+      border-radius: 5px;
+    }
+
+    .card button { 
+      padding: 10px 20px;
+      background-color: #ff3477;
+      border: none;
+      border-radius: 5px;
+      color: #fff;
+      cursor: pointer;
+      transition: transform 0.2s;
+    }
+
+    .card button:hover {
+      transform: scale(1.1);
+    }
+
+    .feedback {
+      margin-top: 20px;
+      font-style: italic;
+      color: #098509;
+    }
+  </style>
+</head>
+<body>
+  <div class="card">
+    <h1>Flood Risk Prediction</h1>
+    <label><i class="fa fa-thermometer-half"></i> Temperature:</label>
+    <input type="text" id="temperature" placeholder="Enter Temperature">
+    <label><i class="fa fa-tint"></i> Humidity:</label>
+    <input type="text" id="humidity" placeholder="Enter Humidity">
+    <label><i class="fa fa-wind"></i> Wind Speed:</label>
+    <input type="text" id="windSpeed" placeholder="Enter Wind Speed">
+    <label><i class="fa fa-cloud-rain"></i> Total Rainfall:</label>
+    <input type="text" id="totalRainfall" placeholder="Enter Total Rainfall">
+    <button onclick="predict()">Predict</button>
+    <div id="feedback" class="feedback"></div>
+  </div>
+
+  <script>
+    function predict() {
+      const feedback = document.getElementById('feedback');
+      feedback.textContent = "Predicting flood risk...";
+      setTimeout(() => {
+        feedback.textContent = "Flood risk prediction completed!";
+      }, 2000);
+    }
+  </script>
+</body>
+</html>
